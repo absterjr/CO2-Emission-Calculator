@@ -15,3 +15,5 @@ This is highly needed in the modern-day world because humans are causing uncontr
 ### How To Run
 
 Just Download the code file or clone the repository and run it. No need of installing any ide.
+
+### [Try it Out](https://absterjr.github.io/CO2-Emission-Calculator/)

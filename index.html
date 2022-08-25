@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <!-- css file -->
+    <link rel="stylesheet" href="style.css" />
+    <title>CO2 Calculator</title>
+  </head>
+  <body>
+    <div class="container" id="form-container">
+      <div class="title">CO<sub>2</sub> Emission Calculator</div>
+      <div class="form-div">
+        <div class="custom-select">
+          <label for="select-state">Please choose your state:</label>
+          <select name="state" id="select-state"></select>
+          <span class="custom-arrow"></span>
+        </div>
+        <br />
+        <div class="members">
+          <i class="fas fa-home"></i>
+          <input
+            type="number"
+            placeholder="Family Members"
+            id="members-input"
+            name="members-input"
+          />
+        </div>
+
+        <div class="electricity">
+          <i class="fas fa-bolt"></i>
+          <input
+            type="number"
+            placeholder="Meter Reading"
+            id="electricity-input"
+            name="electricity-input"
+          />
+          <label for="electricity-input"> kWh/Month </label>
+        </div>
+        <div class="fuel">
+          <div class="distance">
+            <i class="fas fa-car"></i>
+            <input
+              type="number"
+              placeholder="Distance Driven on Average"
+              id="distance-input"
+              name="distance-input"
+            />
+            <label for="distance-input"> KM/Day </label>
+          </div>
+
+          <div class="mileage">
+            <i class="fas fa-oil-can"></i>
+            <input
+              type="number"
+              placeholder="Mileage of Vehicle"
+              id="mileage-input"
+              name="mileage-input"
+            />
+            <label for="mileage-input"> KMPL </label>
+          </div>
+        </div>
+
+        <div class="lpg">
+          <i class="fas fa-fire"></i>
+          <input
+            type="number"
+            placeholder="Total Cylinders Used"
+            id="lpg-input"
+            name="lpg-input"
+          />
+          <label for="lpg-input"> /Year </label>
+        </div>
+
+        <div class="waste">
+          <i class="fas fa-dumpster"></i>
+          <input
+            type="number"
+            placeholder="Waste Thrown Out"
+            id="waste-input"
+            name="waste-input"
+          />
+          <label for="waste-input"> KG/Week</label>
+        </div>
+
+        <button class="submit-btn" onclick="onSubmition()">Submit</button>
+      </div>
+    </div>
+<!-- output -->
+    <div class="container" id="result-container">
+      <div class="title">
+        Your Total CO<sub>2</sub> Emission is: <span id="result-output"></span> Tons/Year
+      </div>
+         <br>
+      <div class="subtitle" id="success">Great Job! Your CO<sub>2</sub> footprint is under control. Keep saving the Earth</div>
+        <br>
+      <div class="subtitle" id="danger">Your CO<sub>2</sub> Emissions are above Ideal. Take the following measures to reduce your emissions:  </div>
+
+      <div id="electricity-output" >
+        <p>
+          Your CO<sub>2</sub> Electricity Emissions: 
+          <span id="electricity-result"></span> KWh/year. To lower your Electricity consumptions take the following steps:-
+        </p>
+        <ol>
+          <li>Choose the right light</li>
+          <p class="text">
+            LED bulbs are the most energy efficient lighting option. LED bulbs
+            use 75% less electricity than incandescent bulbs (Energy Star). The
+            also have no mercury, and last about 25 times longer than
+            traditional incandescent bulbs (DoE)
+          </p>
+          <li>Don't keep unnecessary application connected to power</li>
+          <p class="text">
+            Devices like televisions, microwaves, scanners, and printers use
+            standby power, even when off. Some chargers continue to pull small
+            amounts of energy, even when plugged in (a good judge of this is if
+            a charger feels warm to the touch).
+          </p>
+          <li>Turn off the lights when not in room/going out.</li>
+          <p class="text">
+            Two 100-watt incandescent bulbs switched off an extra two hours per
+            day could save you Rs 1000 over a year. Better yet, switch to LED. Just
+            one switch and you're done!
+          </p>
+        </ol>
+      </div>
+
+
+      <div id="fuel-output" >
+        <p>Your CO<sub>2</sub> Fuel Emission: <span id="fuel-result"></span> KG/Year. To lower your fuel consumptions take the following steps:-</p>
+        <p></p>
+        <ol>
+          <li>Drive only when needed or use Public Transport</li>
+          <p class="text">
+            Drive your car only when you really need to. If you only need to
+            travel a few blocks, consider walking or even riding a bicycle. Not
+            only will you save money at the pump, the exercise will certainly do
+            you some good
+          </p>
+          <li>Use cruise control on the highways.</li>
+          <p class="text">
+            Cruise control means that your car will be going at a constant
+            velocity, which means there is no acceleration. No acceleration
+            reduces the amount of work your engine does, and therefore it uses
+            less gas. You should set your cruise control at the speed limit,
+            because 55 miles per hour is the perfect speed for maximum fuel
+            efficiency
+          </p>
+          <li>Avoid Keeping the car on at Red Lights</li>
+          <p class="text">
+            When you do need to drive your car, make sure you avoid idling
+            whenever possible. When your car is running, but not moving, your
+            gas mileage is absolute zero. So if your car will remain stationary
+            for more than a minute or so, switch the engine off. However, only
+            do this when it is safe to do so
+          </p>
+        </ol>
+      </div>
+      <div id="lpg-output" >
+        <p>Your CO<sub>2</sub> LPG Emission: <span id="lpg-result"></span> KG/Year . To lower your LPG consumptions take the following steps:-</p>
+        <ol>
+          <li>Use pressure cookers</li>
+          <p class="text">
+            Use pressure cookers whenever possible. Since food is cooked under
+            pressure inside a pressure cooker, it gets cooked really fast (70%
+            faster than conventional cooking techniques) and thus uses less
+            fuel.
+          </p>
+          <li>Avoid Overcooking</li>
+          <p class="text">
+            Overcooking reduces the nutritional value and also wastes LPG. So
+            avoid overcooking the food.
+          </p>
+          <li>Cover and Cook</li>
+          <p class="text">
+            Cover the cookware or the pan with a lid while you cook. When we
+            close and cook the energy is used more efficiently and so cooking
+            becomes faster. Saves time and saves fuel.
+          </p>
+        </ol>
+      </div>
+
+      <div id="waste-output">
+        <p>Your CO<sub>2</sub> Waste Emission: <span id="waste-result"></span> kilograms per year. To lower your waste productions take the following steps:-</p>
+        <ol>
+          <li>The three R’s – Reduce, Reuse and Recycle </li>
+          <p class="text">
+              Reduce, Reuse, Recycle – these three 'R' words are an important part of sustainable living, as they help to cut down on the amount of waste we have to throw away.
+  
+              It's Really simple!
+              <ul >
+              <li class="text">Reduce the amount of waste you produce.</li>
+              <li class="text">Reuse items as much as you can before replacing them.</li>
+              <li class="text">Recycle items wherever possible.</li>
+              </ul>
+              
+             <span style="font-size: 1.1rem;">Using the 3 'R's also helps to minimise the amount of space needed for landfill sites, where waste materials are disposed of.</span>
+          </p>
+          <li>Ditch the plastic bags.</li>
+          <p class="text">One of the simplest ways to decrease the amount of waste you produce is to use reusable bags while shopping. Instead of relying on your supermarket’s plastic bags, bring your own cloth ones to pack up your items and tote them home. Keeping a bunch of extra bags in the trunk of your car or right by the door is an easy way to make sure you don’t forget them at home.
+          </p>
+          <li>Start Composting</li>
+          <p class="text">
+              Every day, a large amount of what you throw into the trash could be composted and returned to the earth. If you have a bin and some extra space, you can easily start a compost that could feed back into your garden. Your excess food won’t go to waste, your garden will be full of nutrients and you can feel better about your impact on the planet. Win, win, win.
+          </p>
+        </ol>
+      </div>
+    </div>
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

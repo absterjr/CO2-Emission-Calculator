@@ -9,3 +9,9 @@ In today’s world, full of pollution-causing activities, there is an alarming s
 This is highly needed in the modern-day world because humans are causing uncontrollable pollution which is life-threatening.
 
 ![CO2 Calculator](https://github.com/absterjr/CO2-Emission-Calculator/blob/main/Untitled.jpg?raw=true)
+
+
+
+### How To Run
+
+Just Download the code file or clone the repository and run it. No need of installing any ide.

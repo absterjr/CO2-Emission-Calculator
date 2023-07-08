@@ -5,28 +5,34 @@ body {
   width: 100vw;
   align-items: center;
   justify-content: center;
-  color: #555;
-  background: #ecf0f3;
+  color: black;
+  background-color: black;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
 }
 
 .custom-select label {
   padding: 0 10px;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 select {
-  /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); */
-  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
-  font-size: 1.1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  /* box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff; */
+  font-size: .9rem;
+  border-radius: 20px;
   padding: 0.5em 2em 0.5em 1em;
   background: #ecf0f3;
-
-  color: #4d5061;
-  border: 0;
+  color: #555;
+  border: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 .form-div {
   display: flex;
+  font-weight: bold;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -36,7 +42,7 @@ select {
 
 .custom-select {
   position: relative;
-  padding: 10px px;
+  /* padding: 10px; */
 }
 
 .custom-arrow {
@@ -44,9 +50,9 @@ select {
   top: 0;
   right: 0;
   display: block;
-  background: #403d3d;
+  background: black;
   height: 100%;
-  width: 2.5rem;
+  width: 2rem;
   pointer-events: none;
 }
 
@@ -77,18 +83,26 @@ select {
 
 .container {
   width: 80%;
-  padding: 60px 35px 35px 35px;
+  padding: 20px;
   border-radius: 40px;
   background: #ecf0f3;
-  box-shadow: 20px 20px 20px #cbced1, -20px -20px 20px #ffffff;
+  /* box-shadow: 20px 20px 20px #cbced1, -20px -20px 20px #ffffff; */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .title {
-  text-align: center;
-  font-size: 35px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  letter-spacing: 0.5px;
+  font-size: .8rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;  
+}
+
+.title img {
+  width: 100px;
+  display: inline;
+}
+
+.title p {
+  display: inline;
 }
 
 .form-div input {
@@ -97,7 +111,13 @@ select {
   background: none;
   font-size: 18px;
   color: #555;
-  padding: 10px 10px 20px 5px;
+  padding: 10px 10px 10px 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: .9rem;
+}
+
+.form-div label {
+  font-size: .9rem;
 }
 
 .members,
@@ -108,9 +128,11 @@ select {
 .waste {
   margin-bottom: 20px;
   border-radius: 15px;
-  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  /* box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff; */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   padding: 0px 20px;
   margin-right: 20px;
+
 }
 
 .fuel {
@@ -125,27 +147,28 @@ select {
   padding: 10px 0px;
   width: 300px;
   border-radius: 30px;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 700;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #fff;
   text-align: center;
-  background: #24cfaa;
-  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
-  transition: 0.5s;
+  background: #00b36a;
+  /* box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff; */
+  transition: .2s;
 }
 
 .submit-btn:hover {
-  background: #1da88a;
+  background: black;
+
 }
 .submit-btn:active {
-  background: #1da88a;
+  background: black;
 }
 
 
 #result-container {
   display:none;
-  font-size: 1.3rem;
+  font-size: .9rem;
   color: black;
 }
 .subtitle {
@@ -172,5 +195,5 @@ select {
 }
 
 .text {
-    font-size: 1.1rem;
+    font-size: .9rem;
 }

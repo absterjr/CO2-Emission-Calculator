@@ -18,17 +18,24 @@
     <!-- css file -->
     <link rel="stylesheet" href="style.css" />
     <title>CO2 Calculator</title>
+    <link rel="icon" href="static/icon.svg">
   </head>
   <body>
     <div class="container" id="form-container">
-      <div class="title">CO<sub>2</sub> Emission Calculator</div>
+      <div class="title">
+        <img src="static/icon.svg" alt="">
+        <p>CO<sub>2</sub> Calculator</p>
+      </div>
+
       <div class="form-div">
         <div class="custom-select">
           <label for="select-state">Please choose your state:</label>
           <select name="state" id="select-state"></select>
           <span class="custom-arrow"></span>
         </div>
-        <br />
+
+        <br>
+
         <div class="members">
           <i class="fas fa-home"></i>
           <input
@@ -97,7 +104,20 @@
 
         <button class="submit-btn" onclick="onSubmition()">Submit</button>
       </div>
+
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- output -->
     <div class="container" id="result-container">
       <div class="title">
